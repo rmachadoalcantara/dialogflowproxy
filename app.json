@@ -1,0 +1,7 @@
+{
+  "name": "Tiledesk Dialogflow Proxy Sample App",
+  "description": "A simple App to to connect Tiledesk Widget with Dialogflow",
+  "repository": "https://github.com/Tiledesk/dialogflowproxy",
+  "logo": "https://www.tiledesk.com/wp-content/uploads/2018/03/tiledesk-logo.png",
+  "keywords": ["node", "express", "tiledesk", "dialogflow", "widget", "proxy", "web"]
+}
