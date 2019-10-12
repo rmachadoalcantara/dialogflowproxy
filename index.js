@@ -32,8 +32,8 @@ const upload = multer({
 });
 module.exports = upload
 
-app.get('/hello', function (req, res) {
-  res.send('hello world')
+app.get('/', function (req, res) {
+  res.send('Hello Dialogflow Proxy!')
 });
 
 app.post('/sendaudiomessage', upload.single('audio_data'), (req, res) => {
@@ -245,10 +245,25 @@ async function runDFQuery(text, audio_filename, agent_id, sessionId, language_co
   }
 
   // Create a new session
-  const credentials_filename = './google_credentials' + "__" + agent_id
+  var files = fs.readdirSync('google_credentials/');
+  var credentials_filename
+  for (var i= 0; i < files.length; i++) {
+    f = files[i]
+    console.log("found: ", f)
+    if (f.startsWith(agent_id)) {
+      console.log("found: ", f)
+      credentials_filename = f
+      break
+    }
+  }
+  
   console.log('Proxy. Using google credentials file: ' + credentials_filename)
-  const google_credentials = require(credentials_filename);
-  const credentials = google_credentials.credentials;
+  var credentials
+  // fs.readFile("google_credentials/" + credentials_filename, 'utf8', function (err, data) {
+  //   if (err) throw err;
+  //   credentials = JSON.parse(data);
+  // });
+
   const sessionClient = new dialogflow.SessionsClient({'credentials':credentials});
   const sessionPath = sessionClient.sessionPath(agent_id, sessionId);
   

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <base href="./">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="application/javascript">
+              window.tiledeskSettings = 
+              {
+                  projectid: "bot_conversation", 
+                  persistence:"local",                /** local/session/none **/
+                  userId: "test_user_id",
+                  isLogEnabled: true,                     /** true/false **/
+                  logoChat: "/dflogo.png",                  /** none/tiledesklogo/absolute url **/
+                  welcomeTitle: "Ask me",            /** string **/
+                  welcomeMsg: " ",                /** string **/
+                  allowTranscriptDownload: false,
+                  widgetTitle: "DF Widget",
+                  poweredBy: "",
+                  showLogoutOption: false,
+                  customAttributes: {
+                    url_audiorepo: "/",
+                    proxy_url: "/proxy", 
+                    agent: "supporto-anagrafe-vcqvkb",
+                    recipient: "supporto-anagrafe-vcqvkb",
+                    recipient_fullname: "John",
+                    button_label: "Ask John",
+                    welcome_image: "/dflogo.png",
+                    welcome_summary: "Hello, I'm John DF, your Dialogflow assistant. To get help press \'Ask John\'",
+                    start_hidden_message: '__start'
+                  },
+                  marginX: "80px",
+                  marginY: "20px",
+                  hideAttachButton: true,
+                  showMicButton: false
+              };
+              (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "/js/launch.js";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'tiledesk-jssdk'));
+              
+              window.tileDeskAsyncInit = function() {
+                window.tiledesk.on('getImageUrlThumb', function(event_data) {
+                  var message =  event_data.detail.message;
+                  if(message.sender === 'bari_bot') {
+                    message.sender_urlImage = "https://user-images.githubusercontent.com/9556761/64333473-de3cfa80-cfd6-11e9-971b-c00c41dd2f91.png";
+                  }
+                });
+              };
+            </script>
+    </head>
+    <body>
+      Dialogflow Widget test page.
+    </body>
+</html>
