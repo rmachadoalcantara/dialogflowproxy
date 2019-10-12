@@ -32,9 +32,9 @@ const upload = multer({
 });
 module.exports = upload
 
-app.get('/', function (req, res) {
-  res.send('Hello Dialogflow Proxy!')
-});
+// app.get('/', function (req, res) {
+//   res.send('Hello Dialogflow Proxy!')
+// });
 
 app.post('/sendaudiomessage', upload.single('audio_data'), (req, res) => {
   console.log("sendaudiomessage. request.file: ", req.file)
