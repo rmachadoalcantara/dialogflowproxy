@@ -96,6 +96,10 @@ const STATUS_KEY = 'status'
 const ATTRIBUTES_KEY = 'attributes'
 const CHANNEL_TYPE_KEY = 'channel_type'
 const TIMESTAMP_KEY = 'timestamp'
+const METADATA_KEY = "metadata"
+const TYPE_TEXT = 'text'
+const TYPE_IMAGE = 'image'
+const TYPE_AUDIO = 'audio'
 
 app.post('/proxy', (req, res) => {
   var text = "ciao";
@@ -148,9 +152,8 @@ app.post('/proxy', (req, res) => {
         repl_message[LANGUAGE_KEY] = language_code
         repl_message[RECIPIENT_KEY] = sender
         repl_message[RECIPIENT_KEY] = senderFullname
-        repl_message[SENDER_KEY] = recipient //'bot_comunebari'
-        repl_message[SENDER_FULLNAME_KEY] = recipientFullname //'Ernesto'
-        repl_message[TYPE_KEY] = message_type
+        repl_message[SENDER_KEY] = recipient
+        repl_message[SENDER_FULLNAME_KEY] = recipientFullname
         repl_message[STATUS_KEY] = '150'
         
         const telegram_quickreplies = result['fulfillmentMessages'][0]['quickReplies']
@@ -172,17 +175,37 @@ app.post('/proxy', (req, res) => {
             }
           }
         } else {
-          console.log("Proxy. No telegram quickreplies are defined, skipping and using fullfillmentText.")
-          repl_message['text'] = result['fulfillmentText']
-          const text = result['fulfillmentText'];
-          // cerca i bottoni eventualmente definiti
+          console.log("Proxy. No telegram quickreplies defined, skipping and using fullfillmentText.")
+          repl_message[TEXT_KEY] = result['fulfillmentText']
+          var text = result['fulfillmentText'];
+          repl_message[TYPE_KEY] = TYPE_TEXT
+
+          // looks for images
+          var image_pattern = /^\\image:.*/mg; // images are defined as a line starting with \image:IMAGE_URL
+          console.log("Searching images with image_pattern: ", image_pattern)
+          var images = text.match(image_pattern);
+          console.log("images: ", images)
+          if (images && images.length > 0) {
+            const image_text = images[0]
+            var text = text.replace(image_text,"").trim()
+            const image_url = image_text.replace("\\image:", "")
+            repl_message[TEXT_KEY] = text
+            repl_message[TYPE_KEY] = TYPE_IMAGE
+            repl_message[METADATA_KEY] = {
+              src: image_url,
+              width: 200,
+              height: 200 
+            }
+          }
+
+          // looks for bullet buttons
           var button_pattern = /^\*.*/mg; // buttons are defined as a line starting with an asterisk
-          var text_buttons = text.match(button_pattern);
-          if (text_buttons) {
-            var text_with_removed_buttons = text.replace(button_pattern,"").trim();
-            repl_message[TEXT_KEY] = text_with_removed_buttons
+          var buttons_matches = text.match(button_pattern);
+          if (buttons_matches) {
+            text = text.replace(button_pattern,"").trim();
+            repl_message[TEXT_KEY] = text
             var buttons = []
-            text_buttons.forEach(element => {
+            buttons_matches.forEach(element => {
               console.log("button ", element)
               var remove_extra_from_button = /^\*/mg;
               var button_text = element.replace(remove_extra_from_button, "").trim()
@@ -198,10 +221,8 @@ app.post('/proxy', (req, res) => {
                 buttons: buttons
               }
             }
-          } else {
-            // no buttons
-            repl_message['text'] = text
           }
+
         }
 
         // AUDIO
@@ -212,11 +233,12 @@ app.post('/proxy', (req, res) => {
             type: "audio",
             uid: message_uid
           }
-          repl_message[TYPE_KEY] = 'audio'
+          repl_message[TYPE_KEY] = TYPE_AUDIO
+          repl_message[ATTRIBUTES_KEY]["alwaysShowText"] = true // shows text + audio
         }
-        else {
-          repl_message[TYPE_KEY] = 'text'
-        }
+        // else {
+        //   repl_message[TYPE_KEY] = 'text'
+        // }
         repl_message[TIMESTAMP_KEY] = new Date()
         repl_message[CHANNEL_TYPE_KEY] = channel_type
         res.status(200).send(repl_message);
@@ -245,7 +267,8 @@ async function runDFQuery(text, audio_filename, agent_id, sessionId, language_co
   }
 
   // Create a new session
-  var files = fs.readdirSync('google_credentials/');
+  const GOOGLE_CREDENTIALS_FOLDER = 'google_credentials/'
+  var files = fs.readdirSync(GOOGLE_CREDENTIALS_FOLDER);
   var credentials_filename
   for (var i= 0; i < files.length; i++) {
     f = files[i]
@@ -256,14 +279,29 @@ async function runDFQuery(text, audio_filename, agent_id, sessionId, language_co
       break
     }
   }
-  
-  console.log('Proxy. Using google credentials file: ' + credentials_filename)
+  credentials_path = GOOGLE_CREDENTIALS_FOLDER + credentials_filename
+  try {
+    if (fs.existsSync(credentials_path)) {
+      console.log("credentials file exists")
+    }
+    else {
+      console.log("ERROR: credentials file do not exist!")
+    }
+  } catch(err) {
+    console.error(err)
+  }
+  console.log('Proxy. Using google credentials file: ' + credentials_path)
   var credentials
-  // fs.readFile("google_credentials/" + credentials_filename, 'utf8', function (err, data) {
+  // fs.readFile(credentials_path, 'utf8', function (err, data) {
+  //   console.log("err reading credentials? ", err)
   //   if (err) throw err;
   //   credentials = JSON.parse(data);
   // });
-
+  var credentials_content = fs.readFileSync(credentials_path, 'utf8')
+  credentials = JSON.parse(credentials_content);
+  console.log("credentials: ", credentials)
+  console.log("credentials['client_email']: ", credentials['client_email'])
+  
   const sessionClient = new dialogflow.SessionsClient({'credentials':credentials});
   const sessionPath = sessionClient.sessionPath(agent_id, sessionId);
   
