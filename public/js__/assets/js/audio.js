@@ -19,11 +19,8 @@ var encodingTypeSelect = 'wav'; //document.getElementById("encodingTypeSelect");
 // recordButton.addEventListener("click", startRecording);
 // stopButton.addEventListener("click", stopRecording);
 
-var baseLocation = '';
-
-function setBaseLocation(baseLocation) {
-	this.baseLocation = baseLocation;
-	console.log("setBaseLocation:" + baseLocation);
+function recordingTEST() {
+	console.log("recordingTEST: OK");
 }
 
 function startRecording(urlAudiorepo, uid, callbackEndRecording) {
@@ -70,9 +67,8 @@ function startRecording(urlAudiorepo, uid, callbackEndRecording) {
 
 		//disable the encoding selector
 		// encodingTypeSelect.disabled = true;
-
 		recorder = new WebAudioRecorder(input, {
-		  	workerDir: this.baseLocation + "/assets/js/", // "/home/assets/js/" // must end with slash
+		  	workerDir: "/js/assets/js/", // "/home/assets/js/" // must end with slash
 		  	encoding: encodingType,
 		  	numChannels: 2, //2 is the default, mp3 encoding supports only 2
 			onEncoderLoading: function(recorder, encoding) {
