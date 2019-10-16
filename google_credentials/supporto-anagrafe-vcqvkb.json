@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "supporto-anagrafe-vcqvkb",
+  "private_key_id": "0e416c7300467690a08fb7611918fd63004b4945",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQCMhukmFT36Z1iU\nAH2zqqhMUsFD5bdQy7O8OS4Ux2BqnswUL0WodnSzppGfKncvy9zRXvtuVwvJ5TFS\nDD8B0UaYvvnC6KLV8kv3a7F3onDwTWNrngvg6OMafMD71ZKlX2lDMDZ19HAKdz+Q\nXgQ+Ghfj2HTBw9y7wXQ6HeGhvQ7IC3VNxZCQQDt3PVc/CgPbVhru1RrmLV2AwpDO\njfkalFpPls/S79BgtmYBxRuc05eT+7EsqPY0oMxVQpn5IQkgCu35k1EvE4+Aklhj\n3ZKN0XC9uNQrE1Jey+vzIVQL1ViFtgGnjScKgOAQ7t8JX58Gnqz+A6O2d2k3TTXd\nsEvqD/nBAgMBAAECgf9Y7QadEtQloUBsZ+MjztqxcazbSoK2njEe6xA+Fezti4+Z\nNlDeShePl9iO4FCL7nXOCE0ThgHvwRl00ksM22HRRwjGTnC88pcf+wZSrnjJmC9R\n6rGZocYU/N0igARMohP6cIgGHKjJ9qxCrzwAEIMNq+w2sbr9FW53WHFv6DNyYt2U\nNFxrphPA87HYvSVTFQGOKZWjLX6SCy2LcWGL7COOpm7fRxJl8xtLPB1xl/igFK2l\nkiooIPg4YSAJdUEpOSFYkW1HuN21Xln9J0bm2KIJDvPK7YWtIs/XFWPEJ6viaJX5\n1u2xz/QPMrcei1VPQN2aLuJY7hSwnhiB7xYoUikCgYEAxdvGuQpffekwOvcVxO2m\nHb8c59s4BF4q+VVcii/vTjYbT6cSsTTzxrGJNSJPybdVaQNULMs0Z5hbxEEaiBLK\n7dpvXS1+DdVuaKrr8Cuek+A+4/aHYdVUnBQbre2upZ7gU4g0HwoTWBb4eV8XP+rK\nC77mEMr+8DVyIdkfRfWgpSMCgYEAtdJHoM6Nx/sK0lPpMi+yoIZd54HaRpHwe63w\nwq+yL6/wdEjD7R2BCM4dOr1Ye1fToRX5bjASHqfOldneiY4TSxL5pTvRUykwe8yw\nbJFpU5IcuSHF6ULlKGcWqxiMuSkUJZ0YZGRkmyRjykyjT4mFVzP6Ci4idnKHqfGO\ngRHQzcsCgYEAoBJ/gqLWwMoQoBPYg9r0YuqEGzxq5HW+9LtPw+imBbOWgumbIMzD\nUIO/isI4pOxy6COuTRMVUZ6c13kIWwBBNw9au5qbedurmHh3q3XOtLpehxWjT85E\nxoUqI5vAiPOxb0MpT9dZ8RGccq0w5SAx2DDYdsuUV4gVzzaWq4XeMtsCgYA4kZHj\ngCAwhfSZ961oBdsHgoaYzpfAuQsfD8EGcW940r53D2SV00YgHTCO4/YxeePIDHQs\nShx5GTB3Au/v0BpEk0TEmdXIj9obylVhkeQ5Mg5psw5GQp/VcC1nUh4GRbeU9Elw\ngqOieTHq8Okmh9zKgstae3wRahS3VQZHNenG/QKBgEUR1CoVqgJJfAr7Slc8qf97\nmaUZpaewgj/DGG/5wvD0vXBelqW9q4Cq9K08g5mo4EHCJiyLyS7AZ1P/5ucchS2O\nYLD/tEoR+qLnx6/bgifNLSReBegiI4QhvQ6znbarm71nXoAsuJ2jtPFJIa1OYqFY\nkTUs9GCLXb+jtrQ4/kHz\n-----END PRIVATE KEY-----\n",
+  "client_email": "supporto-anagrafe-bari@supporto-anagrafe-vcqvkb.iam.gserviceaccount.com",
+  "client_id": "114823290350551182344",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/supporto-anagrafe-bari%40supporto-anagrafe-vcqvkb.iam.gserviceaccount.com"
+}
