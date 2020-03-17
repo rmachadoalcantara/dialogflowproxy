@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "pm-saquarema-1541037303273",
+  "private_key_id": "8ae49f800591bb2fdd2ed134ba443455cc6f6700",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDOmYXl5kkSzmrv\nOvovPmANHOm5yrs/oRJ9jNQKK97iJvxpddagbcrIhJAGWfXGVXuam5FIeF8ijcej\nMZtJ5KeECfcbmqkEUa/ajeDNXd82vhsOWW4INzabwipWVh91PTgHghg4E2fD002g\nWg/LVbMP3O6M1hf5IKf5Y0fwghuY2jiH6PeAnUH18buLJBmzCgQLH02h5B6BcTyc\nSRtKfMBcI+gsvnrtS92PMXyKOpK4mfRfhUz+BD5esuyn/rHkFV+g6y4oAGmSWlcI\nJ+qjmNhBs0/S28GUG1pVnL/YOOuDYMnyrOT56vN+SmlFAfu8t5NAV51lbL2Hu/YY\ni6UysG+bAgMBAAECggEAVScp7SwRilLR+HCSlc5bwIveOdm5e+xjtqPI8bhLUWNI\nPh93qwAVyLf6tON3TZwGKh9crkYO0Csn0besjbRU5zNESnhgmYshtC8uLPc3/VQ1\nyqBJndFEDMbmtFci+CuXYGDaoqI87pW1NRZp1CEqgKtLF3lWwDQZh8zH5fV6cnEh\nryve3fdOmvNldh2fz7PrBGmDVOqp/VgCjvPUSkcpXRhGnms/2DaidcEpNe63RGVj\nO67DTozYohSG88JJjyPgJ33yMeh/8iNinzwc5n3JLp8iK1kNjZDZME9IPdb/Am8I\nEKda5cI82hYPuhpXAlzvo06csYUd0VVO8puX8kwhQQKBgQDmp1ctuj0s+9nu3cFX\nz3+W/v1ADJgfPdcYZN3kLDaCWgr7CkHrJjcwF6K7TgAlvi1FPXwGo55tH3oibITA\nd7ddJeiF3MNn/JVVrRMZfY4ndbgKGwtAaQGllnY4WoHnFsgCdmXypbWnJazMfcec\n7ykJ9tzB4eLneU152gwkojYgqQKBgQDlTYFkY3zjLlANfMuFEfGqHaRZVyUc3vjz\n99KZvNpupKLN6PX2hC+HoUyTTE1oIl/f1gJ19FhUWML1ciraK+h/jG28C8DCtO/p\nQjmWZxsvJNZhGk9DlEZ9DBn549lkjE6uZIN93Jgj7pgi5iRpEdTgZlhl6yoo8Lga\nIuBMO18EowKBgDuejZ44QY/bGZ3wnAVCkUxKZNOlbbzFk0+u4twTwZM4CxaQtDFA\nE4vO0DVyF/+phLIdDm345P534G39duL5DuB45/2R7sB2PXOD5Sf1mEUC3KtgCix/\n9/kBR1WRr3o4HULlr7xksOufhWbmLC6YcxcsRCupY6lJZYlVn0Xo1+zhAoGBAMNn\nEOSjg0F1rfJQbn6vk+kL6YnYoV/BAxWkEmvAa8PtuG8QHso8SuShp8e+NhiPcnQk\nw2QRHVSDb2AKMkpJMI/A86JTwagq2GdGcByjMJ80HRwSd4l3Sbo2Hcy9RfxRNJuY\nPBV9bojwQeU7ibuf3nB7xsjTZdINkFV1cv6Dea1RAoGAX+RioOOzj7Ck1fzc2FwW\n5FVzbj1t+J3OZV2UI0qaLxOAbMLFaXtSZ7L3W9cY9h51h82dbxGp56H7gnBObN4f\nMOTk/pAU2icrL723bEVBHgyP9XBhGxmib6wTsq3f35xcCrYZbgvlkfy9+LwsRoEN\npW3G7D5+cghmBj83AGO4ebs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflow-ffylbf@pm-saquarema-1541037303273.iam.gserviceaccount.com",
+  "client_id": "116704467628345373070",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-ffylbf%40pm-saquarema-1541037303273.iam.gserviceaccount.com"
+}
